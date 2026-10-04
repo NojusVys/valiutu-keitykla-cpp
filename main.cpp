@@ -4,6 +4,7 @@
 using namespace std;
 
 void meniu();
+void valiutuPasirinkimas();
 
 int main() {
     bool arVeikia = true;
@@ -28,10 +29,7 @@ int main() {
         switch (pasirinkimas) {
             case 1: {
                 int x;
-                cout << "Pasirinkite kokia valiuta norite palyginti:" << endl;
-                cout << "1. Didziosios Britanijos savaras." << endl;
-                cout << "2. Jungtiniu Amerikos valstiju doleris." << endl;
-                cout << "3. Indijos rupija." << endl;
+                valiutuPasirinkimas();
                 cin >> x;
                 switch (x) {
                     case 1: {
@@ -46,6 +44,8 @@ int main() {
                         cout << "1 EUR = " << INR_BENDRAS << " INR." << endl;
                         break;
                     }
+                    case 4:
+                        break;
                     default:
                         cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
 
@@ -55,10 +55,7 @@ int main() {
             case 2: {
                 int x;
                 double kiekis;
-                cout << "Pasirinkite kokia valiuta norite pirkti:" << endl;
-                cout << "1. Didziosios Britanijos savaras." << endl;
-                cout << "2. Jungtiniu Amerikos valstiju doleris." << endl;
-                cout << "3. Indijos rupija." << endl;
+                valiutuPasirinkimas();
                 cin >> x;
                 cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
                 cin >> kiekis;
@@ -75,6 +72,8 @@ int main() {
                         cout << fixed << setprecision(2) << "Jus perkate INR uz: " << kiekis << " EUR. Jus gausite: " << kiekis*INR_PIRKTI << " INR." << endl;
                         break;
                     }
+                    case 4:
+                        break;
                     default:
                         cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
                 }
@@ -83,10 +82,7 @@ int main() {
             case 3: {
                 int x;
                 double kiekis;
-                cout << "Pasirinkite kokia valiuta norite parduoti:" << endl;
-                cout << "1. Didziosios Britanijos savaras." << endl;
-                cout << "2. Jungtiniu Amerikos valstiju doleris." << endl;
-                cout << "3. Indijos rupija." << endl;
+                valiutuPasirinkimas();
                 cin >> x;
                 switch (x) {
                     case 1: {
@@ -107,6 +103,8 @@ int main() {
                         cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " INR. Jus gausite: " << kiekis/INR_PARDUOTI << " EUR." << endl;
                         break;
                     }
+                    case 4:
+                        break;
                     default:
                         cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
                 }
@@ -130,4 +128,12 @@ void meniu(){
     cout << "2. Valiutos pirkimas (EUR -> pasirinkta valiuta)." << endl;
     cout << "3. Valiutos pardavimas (pasirinkta valiuta -> EUR)." << endl;
     cout << "4. Iseiti." << endl;
+}
+
+void valiutuPasirinkimas(){
+    cout << "Pasirinkite kokia valiuta norite parduoti:" << endl;
+    cout << "1. Didziosios Britanijos savaras." << endl;
+    cout << "2. Jungtiniu Amerikos valstiju doleris." << endl;
+    cout << "3. Indijos rupija." << endl;
+    cout << "4. Grizti atgal." << endl;
 }
