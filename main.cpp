@@ -30,50 +30,99 @@ int main() {
         switch (pasirinkimas) {
             case 1: {
                 int x;
+                int y;
+                double kiekis;
+                cout << "Pasirinkite kokia valiuta norite palyginti." << endl;
                 valiutuPasirinkimas();
                 cin >> x;
-                switch (x) {
-                    case 1: {
-                        cout << "1 EUR = " << GBP_BENDRAS << " GBP." << endl;
-                        break;
+                if (x == 1) {
+                    cout << "1. Norite pamatyti \u20ac -> \u00A3?" << endl;
+                    cout << "2. Norite pamatyti \u00A3 -> \u20ac?" << endl;
+                    cin >> y;
+                    switch (y) {
+                        case 1:{
+                            cout << "Iveskite kieki eurais: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << kiekis << "\u20ac = \u00A3" << kiekis*GBP_BENDRAS << "." << endl;
+                            break;
+                            }
+                        case 2:{
+                            cout << "Iveskite kieki svarais: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << "\u00A3" << kiekis << " = " << kiekis/GBP_BENDRAS << "\u20ac." << endl;
+                            break;
+                            }
+                        default:
+                            cout << "Tokio pasirinkimo nera." << endl;
                     }
-                    case 2: {
-                        cout << "1 EUR = " << USD_BENDRAS << " USD." << endl;
-                        break;
+                } else if (x == 2) {
+                    cout << "1. Norite pamatyti \u20ac -> \u0024?" << endl;
+                    cout << "2. Norite pamatyti \u0024 -> \u20ac?" << endl;
+                    cin >> y;
+                    switch (y) {
+                        case 1:{
+                            cout << "Iveskite kieki eurais: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << kiekis << "\u20ac = \u0024" << kiekis*USD_BENDRAS << "." << endl;
+                            break;
+                            }
+                        case 2:{
+                            cout << "Iveskite kieki JAV doleriais: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << "\u0024" << kiekis << " = " << kiekis/USD_BENDRAS << "\u20ac." << endl;
+                            break;
+                            }
+                        default:
+                            cout << "Tokio pasirinkimo nera." << endl;
                     }
-                    case 3: {
-                        cout << "1 EUR = " << INR_BENDRAS << " INR." << endl;
-                        break;
+                } else if (x == 3) {
+                    cout << "1. Norite pamatyti \u20ac -> \u20b9?" << endl;
+                    cout << "2. Norite pamatyti \u20b9 -> \u20ac?" << endl;
+                    cin >> y;
+                    switch (y) {
+                        case 1:{
+                            cout << "Iveskite kieki eurais: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << kiekis << "\u20ac = \u20b9" << kiekis*INR_BENDRAS << "." << endl;
+                            break;
+                            }
+                        case 2:{
+                            cout << "Iveskite kieki Indijos rupijomis: ";
+                            kiekis = kiekioIvestis();
+                            cout << fixed << setprecision(2) << "\u20b9" << kiekis << " = " << kiekis/INR_BENDRAS << "\u20ac." << endl;
+                            break;
+                            }
+                        default:
+                            cout << "Tokio pasirinkimo nera." << endl;
                     }
-                    case 4:
-                        break;
-                    default:
-                        cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
-                }
+                } else if (x == 4) {
+                    break;
+                } else cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
                 break;
             }
             case 2: {
                 int x;
                 double kiekis;
+                cout << "Pasirinkite kokia valiuta norite nupirkti." << endl;
                 valiutuPasirinkimas();
                 cin >> x;
                 switch (x) {
                     case 1: {
                         cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus perkate GBP uz: " << kiekis << " EUR. Jus gausite: " << kiekis*GBP_PIRKTI << " GBP." << endl;
+                        cout << fixed << setprecision(2) << "Jus perkate GBP uz: " << kiekis << "\u20ac. Jus gausite: \u00A3" << kiekis*GBP_PIRKTI << "." << endl;
                         break;
                     }
                     case 2: {
                         cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus perkate USD uz: " << kiekis << " EUR. Jus gausite: " << kiekis*USD_PIRKTI << " USD." << endl;
+                        cout << fixed << setprecision(2) << "Jus perkate USD uz: " << kiekis << "\u20ac. Jus gausite: \u0024" << kiekis*USD_PIRKTI << "." << endl;
                         break;
                     }
                     case 3: {
                         cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus perkate INR uz: " << kiekis << " EUR. Jus gausite: " << kiekis*INR_PIRKTI << " INR." << endl;
+                        cout << fixed << setprecision(2) << "Jus perkate INR uz: " << kiekis << "\u20ac. Jus gausite: \u20b9" << kiekis*INR_PIRKTI << "." << endl;
                         break;
                     }
                     case 4:
@@ -86,25 +135,26 @@ int main() {
             case 3: {
                 int x;
                 double kiekis;
+                cout << "Pasirinkite kokia valiuta norite parduoti:" << endl;
                 valiutuPasirinkimas();
                 cin >> x;
                 switch (x) {
                     case 1: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " GBP. Jus gausite: " << kiekis/GBP_PARDUOTI << " EUR." << endl;
+                        cout << fixed << setprecision(2) << "Jus parduodate: \u00A3" << kiekis << ". Jus gausite: " << kiekis/GBP_PARDUOTI << "\u20ac." << endl;
                         break;
                     }
                     case 2: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " USD. Jus gausite: " << kiekis/USD_PARDUOTI << " EUR." << endl;
+                        cout << fixed << setprecision(2) << "Jus parduodate: \u0024" << kiekis << ". Jus gausite: " << kiekis/USD_PARDUOTI << "\u20ac." << endl;
                         break;
                     }
                     case 3: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         kiekis = kiekioIvestis();
-                        cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " INR. Jus gausite: " << kiekis/INR_PARDUOTI << " EUR." << endl;
+                        cout << fixed << setprecision(2) << "Jus parduodate: \u20b9" << kiekis << ". Jus gausite: " << kiekis/INR_PARDUOTI << "\u20ac." << endl;
                         break;
                     }
                     case 4:
@@ -128,14 +178,13 @@ int main() {
 
 void meniu(){
     cout << "Prasome pasirinkti varianta is meniu:" << endl;
-    cout << "1. Valiutos kurso palyginimas su euru." << endl;
+    cout << "1. Valiutos kurso palyginimas." << endl;
     cout << "2. Valiutos pirkimas (EUR -> pasirinkta valiuta)." << endl;
     cout << "3. Valiutos pardavimas (pasirinkta valiuta -> EUR)." << endl;
     cout << "4. Iseiti." << endl;
 }
 
 void valiutuPasirinkimas(){
-    cout << "Pasirinkite kokia valiuta norite parduoti:" << endl;
     cout << "1. Didziosios Britanijos savaras." << endl;
     cout << "2. Jungtiniu Amerikos valstiju doleris." << endl;
     cout << "3. Indijos rupija." << endl;
