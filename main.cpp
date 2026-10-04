@@ -57,18 +57,34 @@ int main() {
                 double kiekis;
                 valiutuPasirinkimas();
                 cin >> x;
-                cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
-                cin >> kiekis;
                 switch (x) {
                     case 1: {
+                        cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
+                        cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus perkate GBP uz: " << kiekis << " EUR. Jus gausite: " << kiekis*GBP_PIRKTI << " GBP." << endl;
                         break;
                     }
                     case 2: {
+                        cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
+                        cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus perkate USD uz: " << kiekis << " EUR. Jus gausite: " << kiekis*USD_PIRKTI << " USD." << endl;
                         break;
                     }
                     case 3: {
+                        cout << "Iveskite suma uz kuria norite pirkti pasirinkta valiuta." << endl;
+                        cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus perkate INR uz: " << kiekis << " EUR. Jus gausite: " << kiekis*INR_PIRKTI << " INR." << endl;
                         break;
                     }
@@ -88,18 +104,30 @@ int main() {
                     case 1: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " GBP. Jus gausite: " << kiekis/GBP_PARDUOTI << " EUR." << endl;
                         break;
                     }
                     case 2: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " USD. Jus gausite: " << kiekis/USD_PARDUOTI << " EUR." << endl;
                         break;
                     }
                     case 3: {
                         cout << "Iveskite kiek norite parduoti pasirinktos valiutos." << endl;
                         cin >> kiekis;
+                        while (kiekis < 0){
+                            cout << "Prasome ivesti teigiama suma: ";
+                            cin >> kiekis;
+                        }
                         cout << fixed << setprecision(2) << "Jus parduodate " << kiekis << " INR. Jus gausite: " << kiekis/INR_PARDUOTI << " EUR." << endl;
                         break;
                     }
