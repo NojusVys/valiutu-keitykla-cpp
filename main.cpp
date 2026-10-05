@@ -166,7 +166,7 @@ int main() {
                 break;
             }
             default:
-                cout << "Jusu pasirinkimas nera tinkamas, bendykite dar karta." << endl;
+                cout << "Jusu pasirinkimas nera tinkamas, bandykite dar karta." << endl;
         }
     }
     return 0;
